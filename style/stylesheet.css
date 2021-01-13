@@ -127,9 +127,16 @@ body {
   right: 0;
   margin: 0;
   padding: 0;
-  display: block;
   background-color: #1a2c66;
   list-style-type: none;
+}
+
+.navigation .mobile ul.visible {
+  display: block;
+}
+
+.navigation .mobile ul.hidden {
+  display: none;
 }
 
 .navigation .mobile li {
@@ -223,21 +230,22 @@ p {
 .skill-container > .title {
   font-size: 32px;
   font-weight: 400;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 25px;
   line-height: 1.2;
 }
 
 .skill-container > ul {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 .skill-group {
-  margin: 0px 0px 50px 0px;
+  margin: 50px 50px 0px 0px;
 }
 
 .skill-title {
@@ -327,6 +335,16 @@ div.project .description {
   height: 120px;
 }
 
+a.back {
+  display: flex;
+  align-items: center;
+}
+
+a.back svg {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
 .b-project section.title {
   margin-top: 50px;
 }
@@ -355,6 +373,26 @@ div.project .description {
   margin-bottom: 30px;
 }
 
+.b-contact .contact-details {
+  margin: 15px 0px 15px 0px;
+}
+
+.b-contact .contact-details > p:first-child {
+  font-weight: 600;
+}
+
+div.illustration {
+  margin: 50px 0px 50px 0px;
+}
+
+div.illustration img {
+  width: 100%;
+}
+
+div.illustration p {
+  font-size: 10px;
+}
+
 @media only screen and (min-width: 960px) {
   .navigation .desktop {
     display: block;
@@ -379,6 +417,10 @@ div.project .description {
 
   .skill-container > ul {
     display: block;
+  }
+
+  div.illustration img {
+    width: auto;
   }
 }
 

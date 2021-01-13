@@ -4,6 +4,11 @@
 
 <head>
     <link rel="stylesheet" href="../style/stylesheet.css">
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/nav.js"></script>
+
+    <title>Portfolio - Dries Van Beveren</title>
 </head>
 
 <body class="b-project">
@@ -18,7 +23,7 @@
                 </li>
 
                 <li>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -37,13 +42,13 @@
                 </svg>
             </button>
 
-            <ul>
+            <ul class="hidden">
                 <li>
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="../index.html" class="nav-link">Home</a>
                 </li>
 
                 <li>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -56,7 +61,12 @@
 
             <section class="title">
                 <div class="outer-container">
-                    <a class="" href="../index.html">Go back</a>
+                    <a class="back" href="../index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Go back
+                    </a>
                     <h2>Networking API</h2>
                 </div>
             </section>
@@ -65,8 +75,10 @@
                 <div class="outer-container">
                     <h3>Purpose</h3>
                     <p class="text">
-                        A while ago, a friend and I started working on a personal game project. The game was multiplayer, so we needed a framework to implement networked functionality.
-                        Because Unity3D doesn't have a performant networking API and because we wanted great control over structure and optimization, we decided to write our own implementation.
+                        A while ago, a friend and I started working on a personal game project. The game was
+                        multiplayer, so we needed a framework to implement networked functionality.
+                        Because Unity3D doesn't have a performant networking API and because we wanted great control
+                        over structure and optimization, we decided to write our own implementation.
                         Because I like technical stuff, I focused on the API.
                     </p>
                 </div>
@@ -76,13 +88,26 @@
                 <div class="outer-container">
                     <h3>Development process</h3>
                     <p class="text">
-                        Our first implementation was not good at all. There were a lot of tight coupled components with large classes and functions, which made extending and testing the API a chore.
-                        I started abstracting various components to decouple the whole system. It took a few tries to come up with a clean way to implement the solution. It's very common in Unity game development
-                        to work with global state (like global singletons) and it's also really unconvenient to unit test Monobehaviour scripts. That's why I split the API in 2 separate modules: a core module and a unity module.
-                        The core module is pure C#: it has no references to the Unity framework and is written with testability in mind. I figured that the data processing side of the API doesn't really have to know where the data comes from,
-                        wether it's from GameObjects or some random C# object. The core module contains the logic to serialize and deserialize data, format them as messages and dispatch them to various interfaces.
-                        It is very customizable. The unity module implements all necessary logic for gameplay networking. It contains a NetworkComponent, NetworkIdentity, RPC functionality and so on.
+                        Our first implementation was not good at all. There were a lot of tight coupled components with
+                        large classes and functions, which made extending and testing the API a chore.
+                        I started abstracting various components to decouple the whole system. It took a few tries to
+                        come up with a clean way to implement the solution. It's very common in Unity game development
+                        to work with global state (like global singletons) and it's also really unconvenient to unit
+                        test Monobehaviour scripts. That's why I split the API in 2 separate modules: a core module and
+                        a unity module.
+                        The core module is pure C#: it has no references to the Unity framework and is written with
+                        testability in mind. I figured that the data processing side of the API doesn't really have to
+                        know where the data comes from,
+                        wether it's from GameObjects or some random C# object. The core module contains the logic to
+                        serialize and deserialize data, format them as messages and dispatch them to various interfaces.
+                        It is very customizable. The unity module implements all necessary logic for gameplay
+                        networking. It contains a NetworkComponent, NetworkIdentity, RPC functionality and so on.
                     </p>
+
+                    <div class="illustration">
+                        <img src="../img/functions.png">
+                        <p>Creation of remote procedure calls in an Monobehaviour script</p>
+                    </div>
                 </div>
             </section>
 
@@ -90,9 +115,12 @@
                 <div class="outer-container">
                     <h3>The future</h3>
                     <p class="text">
-                        The project is far from completed. By working according to the SOLID principles, the number of components has increased rapidly.
-                        There is a lot of dependency injection going on right now to facilitate communication between various components.
-                        I'm playing with the idea of implementing an Event System where the various components can listen for certain events and process them to their liking.
+                        The project is far from completed. By working according to the SOLID principles, the number of
+                        components has increased rapidly.
+                        There is a lot of dependency injection going on right now to facilitate communication between
+                        various components.
+                        I'm playing with the idea of implementing an Event System where the various components can
+                        listen for certain events and process them to their liking.
                     </p>
                 </div>
             </section>

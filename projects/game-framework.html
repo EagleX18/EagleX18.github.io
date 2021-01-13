@@ -4,6 +4,11 @@
 
 <head>
     <link rel="stylesheet" href="../style/stylesheet.css">
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/nav.js"></script>
+
+    <title>Portfolio - Dries Van Beveren</title>
 </head>
 
 <body class="b-project">
@@ -18,7 +23,7 @@
                 </li>
 
                 <li>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -37,13 +42,13 @@
                 </svg>
             </button>
 
-            <ul>
+            <ul class="hidden">
                 <li>
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="../index.html" class="nav-link">Home</a>
                 </li>
 
                 <li>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -56,8 +61,13 @@
 
             <section class="title">
                 <div class="outer-container">
-                    <a class="" href="../index.html">Go back</a>
-                    <h2>Webshop for local grocery store</h2>
+                    <a class="back" href="../index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Go back
+                    </a>
+                    <h2>Small Game Framework</h2>
                 </div>
             </section>
 
@@ -78,6 +88,11 @@
                         I mainly focused on the rendering side of the framework. To have a more practical course I followed some of the articles on <a href="https://learnopengl.com/">https://learnopengl.com/</a> in combination with the book I had.
                         It was a really fun project to do! Just to see how those calculations in the Fragment Shader produced those nice visuals on the screen was mindblowing.
                     </p>
+
+                    <div class="illustration">
+                        <img src="../img/render_2.png">
+                        <p>A PBR rendering of a metallic block (the white sphere represents a point-light)</p>
+                    </div>
                 </div>
             </section>
 
@@ -89,17 +104,17 @@
                 <li class="skill-group">
                     <p class="skill-title">Programming languages</p>
                     <ul class="skill-list">
-                        <li>PHP</li>
-                        <li>Javascript</li>
-                        <li>HTML, CSS (not really a programming language)</li>
+                        <li>C++</li>
+                        <li>GLSL</li>
                     </ul>
                 </li>
 
                 <li class="skill-group">
                     <p class="skill-title">Frameworks</p>
                     <ul class="skill-list">
-                        <li>JQuery</li>
-                        <li>KnockoutJS</li>
+                        <li>OpenGL</li>
+                        <li>Assimp</li>
+                        <li>GLFW</li>
                     </ul>
                 </li>
 
@@ -113,7 +128,7 @@
                 <li class="skill-group">
                     <p class="skill-title">IDE</p>
                     <ul class="skill-list">
-                        <li>Visual Studio Code</li>
+                        <li>Visual Studio</li>
                     </ul>
                 </li>
             </ul>
